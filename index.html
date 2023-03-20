@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function convert() {
+            // Get the input amount in Yuan
+            let yuan = document.getElementById("yuanAmount").value;
+
+            let localYuan = document.getElementById("localYuan").value;
+
+            // Local Yuan Price (for example)
+             // let exchangeRate = 0.00235;
+
+            // Convert the Yuan amount to MMK
+            let mmk = yuan / localYuan;
+
+            // Display the converted amount
+        // document.getElementById("convertedAmount").innerHTML = mmk.toFixed(2) + " MMK";
+        document.getElementById("convertedAmount").innerHTML = Math.round(mmk/100)*100 + " MMK";
+        }
+
+    </script>
+</head>
+<body>
+    <div class="form-control">
+        <label for="">Enter Yuan Amount</label>
+        <input type="number" id="yuanAmount">
+        <br><br>
+        <label for="">Enter Local Yuan Amount</label>
+        <input type="number" id="localYuan">
+    </div>
+    <br>
+    <button onclick="convert()">Convert</button>
+    <span id="convertedAmount"></span>
+</body>
+</html>
